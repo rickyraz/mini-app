@@ -2,27 +2,18 @@
 export interface Props {
   src: string;
   alt: string;
+  href: string;
 }
-const { src, alt } = Astro.props;
+const { src, alt, href } = Astro.props;
 ---
 
-<li class="h-36 rounded-md">
-  <img
-    src={src}
-    alt={alt}
-    class="object-cover w-full h-full rounded-md"
-    id="grid__item"
-  />
-  <p>Project 1</p>
+<li class="h-48 shadow-lg">
+  <a href={href}>
+    <img
+      src={src}
+      alt={alt}
+      class="object-cover w-full h-full rounded-md"
+      id="grid__item"
+    />
+  </a>
 </li>
-
-<!-- Doesnt work -->
-<script>
-  gsap.from("#grid__item", {
-    opacity: 0,
-    y: 10,
-    duration: 0.3,
-    ease: "sine.in",
-    stagger: 0.2,
-  });
-</script>

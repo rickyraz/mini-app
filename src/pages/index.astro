@@ -1,16 +1,51 @@
 ---
-import { gsap } from "gsap";
 import Layout from "../layouts/Layout.astro";
 import Box from "../components/Box.astro";
+const items = [
+  {
+    alt: "image1",
+    image: "https://images.unsplash.com/photo-1661766310418-045c8b911d73",
+    href: "#",
+  },
+  {
+    alt: "image1",
+    image: "https://images.unsplash.com/photo-1661423063753-ea9121c6abb2",
+    href: "#",
+  },
+  {
+    alt: "image1",
+    image: "https://images.unsplash.com/photo-1660930128153-6fd307655fd0",
+    href: "#",
+  },
+  {
+    alt: "image1",
+    image: "https://images.unsplash.com/photo-1660916332506-205aa2111268",
+    href: "#",
+  },
+  {
+    alt: "image1",
+    image: "https://images.unsplash.com/photo-1661766310418-045c8b911d73",
+    href: "#",
+  },
+  {
+    alt: "image1",
+    image: "https://images.unsplash.com/photo-1661766310418-045c8b911d73",
+    href: "#",
+  },
+];
 ---
 
 <Layout title="rickyrazhari - Mini App">
   <main>
-    <h1 class="font-bold flex justify-center text-xl py-8">
+    <h1 class="font-bold flex justify-center text-2xl pt-12">
       Mini App Collections
     </h1>
-    <ul class="grid grid-cols-3 gap-24 px-32 pt-12">
-      <Box alt="Avatar" src="https://www.w3schools.com/howto/img_avatar2.png" />
+    <ul class="grid grid-cols-3 gap-20 px-32 pt-12">
+      {
+        items.map((item) => (
+          <Box alt={item.alt} src={item.image} href={item.href} />
+        ))
+      }
     </ul>
   </main>
 </Layout>
