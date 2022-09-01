@@ -3,44 +3,23 @@ import Layout from "../layouts/Layout.astro";
 import Box from "../components/Box.astro";
 const items = [
   {
-    alt: "image1",
-    image: "https://images.unsplash.com/photo-1661766310418-045c8b911d73",
-    href: "#",
-  },
-  {
-    alt: "image1",
-    image: "https://images.unsplash.com/photo-1661423063753-ea9121c6abb2",
-    href: "#",
-  },
-  {
-    alt: "image1",
-    image: "https://images.unsplash.com/photo-1660930128153-6fd307655fd0",
-    href: "#",
-  },
-  {
-    alt: "image1",
-    image: "https://images.unsplash.com/photo-1660916332506-205aa2111268",
-    href: "#",
-  },
-  {
-    alt: "image1",
-    image: "https://images.unsplash.com/photo-1661766310418-045c8b911d73",
-    href: "#",
-  },
-  {
-    alt: "image1",
-    image: "https://images.unsplash.com/photo-1661766310418-045c8b911d73",
-    href: "#",
+    alt: "Calcultor app",
+    image: "/calc.webp",
+    href: "./collections/calculator",
   },
 ];
 ---
 
 <Layout title="rickyrazhari - Mini App">
   <main>
-    <h1 class="font-bold flex justify-center text-2xl pt-12">
+    <h1
+      class="font-bold font-poppins flex justify-center text-2xl pt-12 text-slate-900"
+    >
       Mini App Collections
     </h1>
-    <ul class="grid grid-cols-3 gap-20 px-32 pt-12">
+    <ul
+      class="grid sm:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-14 xl:gap-20 px-10 md:px-32 pt-12"
+    >
       {
         items.map((item) => (
           <Box alt={item.alt} src={item.image} href={item.href} />

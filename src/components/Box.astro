@@ -1,4 +1,5 @@
 ---
+import { gsap } from "gsap";
 export interface Props {
   src: string;
   alt: string;
@@ -7,13 +8,16 @@ export interface Props {
 const { src, alt, href } = Astro.props;
 ---
 
-<li class="h-48 shadow-lg">
+<li class="h-48 shadow-xl rounded-2xl grid__item">
   <a href={href}>
-    <img
-      src={src}
-      alt={alt}
-      class="object-cover w-full h-full rounded-md"
-      id="grid__item"
-    />
+    <img src={src} alt={alt} class="object-cover w-full h-full rounded-md" />
   </a>
 </li>
+<!-- 
+<script is:inline>
+  gsap.from(".grid__item", {
+    opacity: 0,
+    y: 100,
+    duration: 1,
+  });
+</script> -->
